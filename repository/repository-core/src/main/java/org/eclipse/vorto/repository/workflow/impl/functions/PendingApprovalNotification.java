@@ -40,7 +40,11 @@ public class PendingApprovalNotification implements IWorkflowFunction {
 	public void execute(ModelInfo model, IUserContext user) {
 		LOGGER.debug("Executing workflow function: "+this.getClass());
 		User account = accountService.getUser(user.getUsername());
-		notificationService.sendNotification(new WorkItemPendingMessage(account, model));
+		try {
+			notificationService.sendNotification(new WorkItemPendingMessage(account, model));
+		} catch(Throwable notificationProblem) {
+			LOGGER.warn("Could not send notification in workflow function",notificationProblem);
+		}
 	}
 
 }

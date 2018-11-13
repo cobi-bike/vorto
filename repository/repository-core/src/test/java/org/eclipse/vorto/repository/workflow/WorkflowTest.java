@@ -160,7 +160,7 @@ public class WorkflowTest extends AbstractIntegrationTest {
 		assertEquals(1,workflow.getPossibleActions(model.getId(),UserContext.user(getCallerId())).size());
 	}
 	
-	@Test
+	@Test()
 	public void testStartReleaseModelWithReleasedDependencies() throws Exception  {
 		
 		ModelInfo typeModel = importModel("Color.type");	
@@ -177,8 +177,22 @@ public class WorkflowTest extends AbstractIntegrationTest {
 	}
 	
 	@Test
-	public void testStartReleaseModelWithNonReleasedDependencies() throws Exception  {
+	public void testStartReleaseModelWithNonReleasedDependenciesSameUser() throws Exception  {
 		ModelInfo typeModel = importModel("Color.type");	
+		workflow.start(typeModel.getId());
+		
+		ModelInfo fbModel = importModel("Colorlight.fbmodel");	
+		workflow.start(fbModel.getId());
+		
+		when(userRepository.findByUsername(UserContext.user(getCallerId()).getUsername())).thenReturn(User.create(getCallerId(),Role.USER));
+		fbModel = workflow.doAction(fbModel.getId(),UserContext.user(getCallerId()), SimpleWorkflowModel.ACTION_RELEASE.getName());	
+		assertEquals(SimpleWorkflowModel.STATE_IN_REVIEW.getName(),fbModel.getState());
+		assertEquals(SimpleWorkflowModel.STATE_IN_REVIEW.getName(),this.modelRepository.getById(typeModel.getId()).getState());
+	}
+	
+	@Test
+	public void testStartReleaseModelWithNonReleasedDependenciesDifferentUser() throws Exception  {
+		ModelInfo typeModel = importModel("Color.type", UserContext.user("stefan"));
 		workflow.start(typeModel.getId());
 		
 		ModelInfo fbModel = importModel("Colorlight.fbmodel");	
@@ -188,11 +202,12 @@ public class WorkflowTest extends AbstractIntegrationTest {
 			when(userRepository.findByUsername(UserContext.user(getCallerId()).getUsername())).thenReturn(User.create(getCallerId(),Role.USER));
 			workflow.doAction(fbModel.getId(),UserContext.user(getCallerId()), SimpleWorkflowModel.ACTION_RELEASE.getName());	
 			fail();
-		} catch(InvalidInputException ex) {
-			System.out.println(ex.getMessage());
+		} catch(WorkflowException ex) {
+			ex.printStackTrace();
+			assertEquals(typeModel.getId(),ex.getModel().getId());
+			assertEquals(SimpleWorkflowModel.STATE_DRAFT.getName(),this.modelRepository.getById(fbModel.getId()).getState());
 		}
 	}
-	
 	
 	@Test
 	public void testStartReleaseModelWithReviewedDependencies() throws Exception  {

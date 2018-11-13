@@ -16,8 +16,9 @@ package org.eclipse.vorto.repository.workflow.model;
 
 import org.eclipse.vorto.repository.core.IUserContext;
 import org.eclipse.vorto.repository.core.ModelInfo;
+import org.eclipse.vorto.repository.workflow.WorkflowException;
 
 public interface IWorkflowFunction {
 
-	void execute(ModelInfo model, IUserContext user);
+	void execute(ModelInfo model, IUserContext user) throws WorkflowException;
 }

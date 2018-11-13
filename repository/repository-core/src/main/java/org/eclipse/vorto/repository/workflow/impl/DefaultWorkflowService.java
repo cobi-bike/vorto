@@ -51,7 +51,7 @@ public class DefaultWorkflowService implements IWorkflowService {
 
 	public DefaultWorkflowService(@Autowired IModelRepository modelRepository, @Autowired IUserAccountService userRepository, @Autowired INotificationService notificationService) {
 		this.modelRepository = modelRepository;
-		this.SIMPLE_WORKFLOW = new SimpleWorkflowModel(userRepository,modelRepository,notificationService);
+		this.SIMPLE_WORKFLOW = new SimpleWorkflowModel(userRepository,modelRepository,notificationService,this);
 	}
 
 	@Override
@@ -64,19 +64,13 @@ public class DefaultWorkflowService implements IWorkflowService {
 			modelInfo.setState(newState.getName());
 			
 			ModelInfo updatedInfo = modelRepository.updateMeta(modelInfo);
-			action.get().getFunctions().stream().forEach(a -> executeFunction(a,modelInfo,user));
 			
+			for (IWorkflowFunction function : action.get().getFunctions()) {
+				function.execute(modelInfo,user);
+			}
 			return updatedInfo;
 		} else {
 			throw new WorkflowException(modelInfo,"The given action is invalid.");
-		}
-	}
-	
-	private void executeFunction(IWorkflowFunction function, ModelInfo modelInfo, IUserContext user) {
-		try {
-			function.execute(modelInfo, user);
-		} catch(Throwable t) {
-			LOGGER.error("Problem executing workflow function "+function.getClass(), t);
 		}
 	}
 

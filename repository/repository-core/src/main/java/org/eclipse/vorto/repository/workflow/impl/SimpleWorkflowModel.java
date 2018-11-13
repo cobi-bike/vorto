@@ -21,11 +21,13 @@ import java.util.Optional;
 import org.eclipse.vorto.repository.account.IUserAccountService;
 import org.eclipse.vorto.repository.core.IModelRepository;
 import org.eclipse.vorto.repository.notification.INotificationService;
+import org.eclipse.vorto.repository.workflow.IWorkflowService;
 import org.eclipse.vorto.repository.workflow.impl.conditions.IsAdminCondition;
 import org.eclipse.vorto.repository.workflow.impl.conditions.IsOwnerCondition;
 import org.eclipse.vorto.repository.workflow.impl.conditions.IsReviewerCondition;
 import org.eclipse.vorto.repository.workflow.impl.conditions.OrCondition;
 import org.eclipse.vorto.repository.workflow.impl.functions.PendingApprovalNotification;
+import org.eclipse.vorto.repository.workflow.impl.functions.StartReleaseOfDependencies;
 import org.eclipse.vorto.repository.workflow.impl.validators.CheckStatesOfDependenciesValidator;
 import org.eclipse.vorto.repository.workflow.model.IAction;
 import org.eclipse.vorto.repository.workflow.model.IState;
@@ -62,18 +64,19 @@ public class SimpleWorkflowModel implements IWorkflowModel {
 		
 	private static final List<IState> ALL_STATES = Arrays.asList(STATE_DRAFT,STATE_IN_REVIEW,STATE_RELEASED, STATE_DEPRECATED);
 	
-	public SimpleWorkflowModel(IUserAccountService userRepository, IModelRepository repository, INotificationService notificationService) {
+	public SimpleWorkflowModel(IUserAccountService userRepository, IModelRepository repository, INotificationService notificationService, IWorkflowService workflowService) {
 		
 		final IWorkflowCondition isAdminCondition = new IsAdminCondition(userRepository);
 		final IWorkflowCondition isReviewerCondition = new IsReviewerCondition(userRepository);
 		final IWorkflowFunction pendingWorkItemNotification = new PendingApprovalNotification(notificationService, userRepository);
+		final IWorkflowFunction autoreleaseDependencies = new StartReleaseOfDependencies(repository, workflowService);
 		
 		ACTION_INITAL.setTo(STATE_DRAFT);
 		
 		ACTION_RELEASE.setTo(STATE_IN_REVIEW);
 		ACTION_RELEASE.setConditions(new OrCondition(ONLY_OWNER,isAdminCondition));
-		ACTION_RELEASE.setValidators(new CheckStatesOfDependenciesValidator(repository,STATE_IN_REVIEW.getName(),STATE_RELEASED.getName(),STATE_DEPRECATED.getName()));
-		ACTION_RELEASE.setFunctions(pendingWorkItemNotification);
+		//ACTION_RELEASE.setValidators(new CheckStatesOfDependenciesValidator(repository,STATE_IN_REVIEW.getName(),STATE_RELEASED.getName(),STATE_DEPRECATED.getName()));
+		ACTION_RELEASE.setFunctions(autoreleaseDependencies,pendingWorkItemNotification);
 		
 		ACTION_APPROVE.setTo(STATE_RELEASED);
 		ACTION_APPROVE.setConditions(isAdminCondition,isReviewerCondition);
