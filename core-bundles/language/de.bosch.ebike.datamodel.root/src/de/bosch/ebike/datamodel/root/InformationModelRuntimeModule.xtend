@@ -1,4 +1,4 @@
-/** 
+/**
  * Copyright (c) 2015 Bosch Software Innovations GmbH and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -27,7 +27,7 @@ import org.eclipse.xtext.conversion.IValueConverterService
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.scoping.IScopeProvider
 
-/** 
+/**
  * Use this class to register components to be used at runtime / without the
  * Equinox extension registry.
  */
@@ -40,7 +40,7 @@ class InformationModelRuntimeModule extends AbstractInformationModelRuntimeModul
 	override Class<? extends IScopeProvider> bindIScopeProvider() {
 		return InformationModelScopeProvider
 	}
-	
+
 	@Provides def TypeHelper getTypeHelper() {
 		return new TypeFileAccessingHelper()
 	}
@@ -52,7 +52,7 @@ class InformationModelRuntimeModule extends AbstractInformationModelRuntimeModul
 	override Class<? extends IValueConverterService> bindIValueConverterService() {
 		return DatatypeValueConverter
 	}
-	
+
 	override bindIFormatter(){
 		return InformationModelFormatter
 	}
