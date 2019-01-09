@@ -56,12 +56,6 @@ Workflow {
     }
 
     component = org.eclipse.emf.mwe2.ecore.EcoreGenerator {
-            generateCustomClasses = false
-            genModel = "platform:/resource/${projectName}/model/RootModel.genmodel"
-            srcPath = "platform:/resource/${projectName}/src"
-    }
-
-    component = org.eclipse.emf.mwe2.ecore.EcoreGenerator {
         generateCustomClasses = false
         genModel = "platform:/resource/${projectName}/model/Mapping.genmodel"
         srcPath = "platform:/resource/${projectName}/src"
