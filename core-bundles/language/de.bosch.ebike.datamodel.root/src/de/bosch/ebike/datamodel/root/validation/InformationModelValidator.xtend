@@ -13,7 +13,7 @@
  * Bosch Software Innovations GmbH - Please refer to git log
  *
  *******************************************************************************/
-package org.eclipse.vorto.editor.infomodel.validation
+package de.bosch.ebike.datamodel.root.validation
 
 import java.util.ArrayList
 import java.util.HashSet
@@ -25,7 +25,7 @@ import org.eclipse.vorto.editor.datatype.validation.ValidatorUtils
 import org.eclipse.xtext.validation.Check
 
 /**
- * Information Model Validation rules. 
+ * Information Model Validation rules.
  */
 class InformationModelValidator extends AbstractInformationModelValidator {
 

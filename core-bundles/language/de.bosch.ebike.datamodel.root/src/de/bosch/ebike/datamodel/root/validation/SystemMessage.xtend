@@ -13,8 +13,8 @@
  * Bosch Software Innovations GmbH - Please refer to git log
  *
  *******************************************************************************/
- 
- package org.eclipse.vorto.editor.infomodel.validation
+
+ package de.bosch.ebike.datamodel.root.validation
 
 
 class SystemMessage {
