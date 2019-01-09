@@ -1,0 +1,60 @@
+*******************************************************************************
+* Copyright (c) 2019 Bosch eBike.
+* All rights reserved. This program and the accompanying materials
+* are made available under the terms of the Eclipse Public License v1.0
+* and Eclipse Distribution License v1.0 which accompany this distribution.
+*
+* The Eclipse Public License is available at
+* http://www.eclipse.org/legal/epl-v10.html
+* The Eclipse Distribution License is available at
+* http://www.eclipse.org/org/documents/edl-v10.php.
+*
+* Contributors:
+* Bosch Software Innovations GmbH - Please refer to git log
+*
+*******************************************************************************/
+grammar de.bosch.ebike.datamodel.Root with org.eclipse.xtext.common.Terminals
+import "http://www.eclipse.org/vorto/metamodel/Functionblock" as functionblock
+import "http://www.eclipse.org/vorto/metamodel/Datatype" as datatype
+Root:
+	{Root}
+	'namespace' namespace = QualifiedName
+	'version' version = VERSION
+	('displayname' displayname=STRING)?
+	('description' description=STRING)?
+	(references += ModelReference)*
+	'root' name=ID  '{'
+	'targetplatform' targetPlatform = ID
+	(rules +=RootRule)*
+	'}'
+;
+RootRule:
+	'from' sources+=FunctionBlockSource (',' sources+=FunctionBlockSource)*
+	'to' target = Target;
+
+FunctionBlockSource:
+	FunctionBlockAttributeSource | FunctionBlockPropertySource  |OperationSource |EventSource
+;
+FunctionBlockPropertySource:
+	ConfigurationSource | StatusSource | FaultSource
+;
+FunctionBlockAttributeSource:
+	model = [functionblock::FunctionblockModel]  ('.' attribute = ModelAttribute)?
+;
+ConfigurationSource:
+	model = [functionblock::FunctionblockModel] '.'   'configuration'  '.'  property=[datatype::Property]
+;
+StatusSource:
+	model = [functionblock::FunctionblockModel] '.' 'status' '.'  property=[datatype::Property]
+;
+FaultSource:
+	model = [functionblock::FunctionblockModel] '.'  'fault' '.'  property=[datatype::Property]
+;
+OperationSource:
+	model = [functionblock::FunctionblockModel] '.'  'operation' '.' operation=[functionblock::Operation] ('.' 'params' '.' + param=[functionblock::Param])?
+;
+EventSource:
+	model = [functionblock::FunctionblockModel] '.' 'event' '.' event=[functionblock::Event] ('.' eventProperty=[datatype::Property] )?;
+Target:
+	'ID' 'with' '{' 'id' ':' value=INT '}'
+;
