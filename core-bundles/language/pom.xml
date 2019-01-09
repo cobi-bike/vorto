@@ -19,6 +19,7 @@
 	<module>org.eclipse.vorto.editor.datatype</module>
 	<module>org.eclipse.vorto.editor.functionblock</module>
 	<module>org.eclipse.vorto.editor.infomodel</module>
+	<module>de.bosch.ebike.datamodel.root</module>
 	<module>org.eclipse.vorto.editor.mapping</module>
 	<module>org.eclipse.vorto.editor</module>
 	</modules>
