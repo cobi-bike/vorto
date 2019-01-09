@@ -20,8 +20,8 @@ de.bosch.ebike.datamodel.root
  * Initialization support for running Xtext languages without equinox extension
  * registry
  */
-class InformationModelStandaloneSetup extends RootModelStandaloneSetupGenerated {
+class RootModelStandaloneSetup extends RootModelStandaloneSetupGenerated {
 	def static void doSetup() {
-		new InformationModelStandaloneSetup().createInjectorAndDoEMFRegistration()
+		new RootModelStandaloneSetup().createInjectorAndDoEMFRegistration()
 	}
 }
