@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Vorto Information Model Editor (Incubation)
 Bundle-Vendor: Eclipse.org/Vorto
 Bundle-Version: 0.10.0.qualifier
-Bundle-SymbolicName: org.eclipse.vorto.editor.infomodel;singleton:=true
+Bundle-SymbolicName: de.bosch.datamodel.root;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,

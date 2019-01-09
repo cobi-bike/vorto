@@ -28,11 +28,11 @@ Workflow {
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {
-				baseName = "org.eclipse.vorto.editor.infomodel"
+				baseName = "de.bosch.ebike.datamodel.root"
 				rootPath = rootPath
 				eclipsePlugin = {
 					enabled = false
-				}	
+				}
 				genericIde = {
         			enabled = false
 		        }
@@ -67,20 +67,20 @@ Workflow {
 			}
 		}
 	language = StandardLanguage  {
-			name = "org.eclipse.vorto.editor.infomodel.InformationModel"
-			fileExtensions = "infomodel"
+			name = "de.bosch.ebike.datamodel.RootModel"
+			fileExtensions = "ebike"
 
 			referencedResource = "platform:/resource/org.eclipse.vorto.core/model/InformationModel.genmodel"
 			referencedResource = "platform:/resource/org.eclipse.vorto.core/model/Model.genmodel"
 			referencedResource = "platform:/resource/org.eclipse.vorto.core/model/Functionblock.genmodel"
-			    		
+
     		webSupport = {
     			framework = "Ace"
 		        generateHtmlExample=false
 		        generateJettyLauncher=false
 		        generateServlet=false
-		        generateJsHighlighting=false		        
+		        generateJsHighlighting=false
     		}
 		}
 	}
-}	
+}

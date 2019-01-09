@@ -13,7 +13,7 @@
 * Bosch Software Innovations GmbH - Please refer to git log
 *
 *******************************************************************************/
-grammar de.bosch.ebike.datamodel.root with org.eclipse.xtext.common.Terminals
+grammar de.bosch.ebike.datamodel.root.RootModel with org.eclipse.xtext.common.Terminals
 import "http://www.eclipse.org/vorto/metamodel/Functionblock" as functionblock
 import "http://www.eclipse.org/vorto/metamodel/Datatype" as datatype
 Root:

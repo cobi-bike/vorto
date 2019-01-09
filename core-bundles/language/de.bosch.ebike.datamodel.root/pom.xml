@@ -8,11 +8,11 @@
 		<version>0.10.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>org.eclipse.vorto.editor.infomodel</artifactId>
+	<artifactId>de.bosch.ebike.datamodel.root</artifactId>
 	<packaging>eclipse-plugin</packaging>
-	<name>Information Model Language</name>
-	<description>Information Model DSL</description>
-		
+	<name>eBike Root Datamodel</name>
+	<description>eBike Datamodel Model DSL</description>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -90,7 +90,7 @@
 			<plugin>
 				<groupId>org.eclipse.xtend</groupId>
 				<artifactId>xtend-maven-plugin</artifactId>
-			</plugin>	
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
@@ -125,7 +125,7 @@
 							<includes>
 								<include>**/*</include>
 							</includes>
-						</fileset>						
+						</fileset>
 						<fileset>
 							<directory>${basedir}/model/generated/</directory>
 						</fileset>
