@@ -28,11 +28,24 @@ Import-Package: org.apache.log4j,
  org.eclipse.vorto.editor.datatype.converter,
  org.eclipse.vorto.editor.datatype.validation
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.eclipse.vorto.editor.infomodel,org.eclipse.vorto.e
- ditor.infomodel.formatting,org.eclipse.vorto.editor.infomodel.generat
- or,org.eclipse.vorto.editor.infomodel.scoping,org.eclipse.vorto.edito
- r.infomodel.validation,org.eclipse.vorto.editor.infomodel.services,or
- g.eclipse.vorto.editor.infomodel.serializer,org.eclipse.vorto.editor.
- infomodel.parser.antlr,org.eclipse.vorto.editor.infomodel.parser.antl
- r.internal
+Export-Package: org.eclipse.vorto.editor.infomodel,
+ org.eclipse.vorto.editor.infomodel.formatting,
+ org.eclipse.vorto.editor.infomodel.generator,
+ org.eclipse.vorto.editor.infomodel.scoping,
+ org.eclipse.vorto.editor.infomodel.validation,
+ org.eclipse.vorto.editor.infomodel.services,
+ org.eclipse.vorto.editor.infomodel.serializer,
+ org.eclipse.vorto.editor.infomodel.parser.antlr,
+ org.eclipse.vorto.editor.infomodel.parser.antlr.internal,
+ de.bosch.ebike.datamodel.rootModel,
+ de.bosch.ebike.datamodel.services,
+ de.bosch.ebike.datamodel.generator,
+ de.bosch.ebike.datamodel.rootModel.util,
+ de.bosch.ebike.datamodel.serializer,
+ de.bosch.ebike.datamodel.parser.antlr.internal,
+ de.bosch.ebike.datamodel.parser.antlr,
+ de.bosch.ebike.datamodel.validation,
+ de.bosch.ebike.datamodel,
+ de.bosch.ebike.datamodel.rootModel.impl,
+ de.bosch.ebike.datamodel.scoping
 Automatic-Module-Name: org.eclipse.vorto.editor.infomodel
