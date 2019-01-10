@@ -26,7 +26,10 @@ Export-Package: org.eclipse.vorto.core.api.model.datatype,
  org.eclipse.vorto.core.api.model.mapping.util,
  org.eclipse.vorto.core.api.model.model,
  org.eclipse.vorto.core.api.model.model.impl,
- org.eclipse.vorto.core.api.model.model.util
+ org.eclipse.vorto.core.api.model.model.util,
+ org.eclipse.vorto.core.api.model.root,
+ org.eclipse.vorto.core.api.model.root.impl,
+ org.eclipse.vorto.core.api.model.root.util
 Import-Package: org.eclipse.core.runtime
 Automatic-Module-Name: org.eclipse.vorto.core
 
