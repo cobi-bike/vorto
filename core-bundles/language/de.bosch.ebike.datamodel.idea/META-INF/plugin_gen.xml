@@ -1,0 +1,93 @@
+<idea-plugin version="2">
+	<extensions defaultExtensionNs="org.eclipse.xtext.idea">
+		<package
+			uri="http://www.bosch.de/ebike/datamodel/RootModel"
+			class="de.bosch.ebike.datamodel.rootModel.RootModelPackage"
+		/>
+		<resourceFactory 
+			type="ebike"
+			class="org.eclipse.xtext.resource.IResourceFactory"
+			factoryClass="de.bosch.ebike.datamodel.idea.RootModelExtensionFactory"
+		/>
+		<resourceServiceProvider
+			uriExtension="ebike"
+			class="org.eclipse.xtext.idea.resource.IResourceIdeaServiceProvider"
+			factoryClass="de.bosch.ebike.datamodel.idea.RootModelExtensionFactory"
+		/>
+
+		<lang.setup
+			language="de.bosch.ebike.datamodel.RootModel"
+			implementationClass="de.bosch.ebike.datamodel.idea.RootModelIdeaSetup"
+		/>
+	</extensions>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<psi.treeChangePreprocessor implementation="de.bosch.ebike.datamodel.idea.lang.psi.RootModelCodeBlockModificationListener"/>
+
+		<fileTypeFactory implementation="de.bosch.ebike.datamodel.idea.lang.RootModelFileTypeFactory"/>
+		<stubElementTypeHolder class="de.bosch.ebike.datamodel.idea.lang.RootModelElementTypeProvider"/>
+		<lang.ast.factory 
+			language="de.bosch.ebike.datamodel.RootModel"
+			factoryClass="de.bosch.ebike.datamodel.idea.RootModelExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.lang.BaseXtextASTFactory"
+		/>
+		<lang.parserDefinition 
+			language="de.bosch.ebike.datamodel.RootModel"
+			factoryClass="de.bosch.ebike.datamodel.idea.RootModelExtensionFactory"
+			implementationClass="de.bosch.ebike.datamodel.idea.lang.parser.RootModelParserDefinition"
+		/>
+		<lang.findUsagesProvider 
+			language="de.bosch.ebike.datamodel.RootModel"
+			factoryClass="de.bosch.ebike.datamodel.idea.RootModelExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.findusages.BaseXtextFindUsageProvider"
+		/>
+		<lang.refactoringSupport 
+			language="de.bosch.ebike.datamodel.RootModel"
+			factoryClass="de.bosch.ebike.datamodel.idea.RootModelExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.refactoring.BaseXtextRefactoringSupportProvider"
+		/>
+		<lang.namesValidator 
+			language="de.bosch.ebike.datamodel.RootModel"
+			factoryClass="de.bosch.ebike.datamodel.idea.RootModelExtensionFactory"
+			implementationClass="com.intellij.lang.refactoring.NamesValidator"
+		/>
+		<lang.syntaxHighlighterFactory key="de.bosch.ebike.datamodel.RootModel" implementationClass="de.bosch.ebike.datamodel.idea.highlighting.RootModelSyntaxHighlighterFactory" />
+		<lang.braceMatcher 
+			language="de.bosch.ebike.datamodel.RootModel"
+			factoryClass="de.bosch.ebike.datamodel.idea.RootModelExtensionFactory"
+			implementationClass="com.intellij.lang.PairedBraceMatcher"
+		/>
+		<annotator 
+			language="de.bosch.ebike.datamodel.RootModel"
+			factoryClass="de.bosch.ebike.datamodel.idea.RootModelExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.annotation.IssueAnnotator"
+		/>
+		<completion.contributor language="de.bosch.ebike.datamodel.RootModel" implementationClass="de.bosch.ebike.datamodel.idea.completion.RootModelCompletionContributor"/>
+		<pom.declarationSearcher implementation="de.bosch.ebike.datamodel.idea.lang.pom.RootModelPomDeclarationSearcher"/>
+
+		<lang.psiStructureViewFactory 
+			language="de.bosch.ebike.datamodel.RootModel"
+			factoryClass="de.bosch.ebike.datamodel.idea.RootModelExtensionFactory"
+			implementationClass="com.intellij.lang.PsiStructureViewFactory"
+		/>
+		<facetType implementation="de.bosch.ebike.datamodel.idea.facet.RootModelFacetType"/>
+      	<lang.documentationProvider 
+      		language="de.bosch.ebike.datamodel.RootModel"
+      		factoryClass="de.bosch.ebike.datamodel.idea.RootModelExtensionFactory"
+      		implementationClass="org.eclipse.xtext.idea.documentation.IdeaDocumentationProvider"
+      	/>
+		<colorSettingsPage implementation="de.bosch.ebike.datamodel.idea.highlighting.RootModelColorSettingsPage"/>
+		<highlightVisitor implementation="de.bosch.ebike.datamodel.idea.highlighting.RootModelSemanticHighlightVisitor"/>
+
+		<lang.formatter 
+			language="de.bosch.ebike.datamodel.RootModel"
+			factoryClass="de.bosch.ebike.datamodel.idea.RootModelExtensionFactory"
+			implementationClass="com.intellij.formatting.FormattingModelBuilder"
+		/>
+		<lang.commenter 
+			language="de.bosch.ebike.datamodel.RootModel"
+			factoryClass="de.bosch.ebike.datamodel.idea.RootModelExtensionFactory"
+			implementationClass="com.intellij.lang.CodeDocumentationAwareCommenter"
+		/>
+	</extensions>
+</idea-plugin>

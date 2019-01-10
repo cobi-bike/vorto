@@ -34,8 +34,11 @@ Workflow {
 					enabled = false
 				}
 				genericIde = {
-        			enabled = false
+        			enabled = true
 		        }
+		        ideaPlugin = {
+                    enabled = true
+                }
 		        web = {
 		        	enabled = false
 		        }
