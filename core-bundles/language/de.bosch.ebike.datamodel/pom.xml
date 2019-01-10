@@ -13,6 +13,51 @@
 	<name>eBike Root Datamodel</name>
 	<description>eBike Datamodel Model DSL</description>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.xtext</groupId>
+			<artifactId>org.eclipse.xtext.xtext</artifactId>
+			<version>${xtext.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.xtext</groupId>
+			<artifactId>org.eclipse.xtext.xbase</artifactId>
+			<version>${xtext.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.vorto</groupId>
+			<artifactId>org.eclipse.vorto.editor.datatype</artifactId>
+			<version>${project.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>p2.eclipse-plugin</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.vorto</groupId>
+			<artifactId>org.eclipse.vorto.editor.functionblock</artifactId>
+			<version>${project.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>p2.eclipse-plugin</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.vorto</groupId>
+			<artifactId>org.eclipse.vorto.core</artifactId>
+			<version>${project.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>p2.eclipse-plugin</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -28,7 +73,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<includeProjectDependencies>false</includeProjectDependencies>
+					<includeProjectDependencies>true</includeProjectDependencies>
 					<includePluginDependencies>true</includePluginDependencies>
 					<mainClass>org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher</mainClass>
 					<arguments>
@@ -41,51 +86,6 @@
 						</argument>
 					</arguments>
 				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.eclipse.xtext</groupId>
-						<artifactId>org.eclipse.xtext.xtext</artifactId>
-						<version>${xtext.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>org.eclipse.xtext</groupId>
-						<artifactId>org.eclipse.xtext.xbase</artifactId>
-						<version>${xtext.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>org.eclipse.vorto</groupId>
-						<artifactId>org.eclipse.vorto.editor.datatype</artifactId>
-						<version>${project.version}</version>
-						<exclusions>
-							<exclusion>
-								<groupId>p2.eclipse-plugin</groupId>
-								<artifactId>*</artifactId>
-							</exclusion>
-						</exclusions>
-					</dependency>
-					<dependency>
-						<groupId>org.eclipse.vorto</groupId>
-						<artifactId>org.eclipse.vorto.editor.functionblock</artifactId>
-						<version>${project.version}</version>
-						<exclusions>
-							<exclusion>
-								<groupId>p2.eclipse-plugin</groupId>
-								<artifactId>*</artifactId>
-							</exclusion>
-						</exclusions>
-					</dependency>
-					<dependency>
-						<groupId>org.eclipse.vorto</groupId>
-						<artifactId>org.eclipse.vorto.core</artifactId>
-						<version>${project.version}</version>
-						<exclusions>
-							<exclusion>
-								<groupId>p2.eclipse-plugin</groupId>
-								<artifactId>*</artifactId>
-							</exclusion>
-						</exclusions>
-					</dependency>
-				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>org.eclipse.xtend</groupId>
