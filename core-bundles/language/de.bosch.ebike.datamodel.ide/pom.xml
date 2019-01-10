@@ -42,7 +42,7 @@
 						<version>${xtext.version}</version>
 					</dependency>
 					<dependency>
-						<groupId>de.bosch.ebike.datamodel</groupId>
+						<groupId>org.eclipse.vorto</groupId>
 						<artifactId>de.bosch.ebike.datamodel</artifactId>
 						<version>${project.version}</version>
 					</dependency>
