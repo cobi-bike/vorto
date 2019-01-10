@@ -17,13 +17,6 @@ package
 de.bosch.ebike.datamodel
 
 import com.google.inject.Binder
-import com.google.inject.Provides
-import org.eclipse.vorto.editor.datatype.converter.DatatypeValueConverter
-import org.eclipse.vorto.editor.functionblock.validation.TypeFileAccessingHelper
-import org.eclipse.vorto.editor.functionblock.validation.TypeHelper
-import org.eclipse.xtext.conversion.IValueConverterService
-import org.eclipse.xtext.naming.IQualifiedNameProvider
-import org.eclipse.xtext.scoping.IScopeProvider
 
 /**
  * Use this class to register components to be used at runtime / without the
