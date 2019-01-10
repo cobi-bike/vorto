@@ -8,7 +8,7 @@
 		<version>0.10.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>de.bosch.ebike.datamodel.root</artifactId>
+	<artifactId>de.bosch.ebike.datamodel</artifactId>
 	<packaging>eclipse-plugin</packaging>
 	<name>eBike Root Datamodel</name>
 	<description>eBike Datamodel Model DSL</description>

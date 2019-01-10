@@ -10,7 +10,7 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-package de.bosch.ebike.datamodel.root;
+package de.bosch.ebike.datamodel;
 
 import org.eclipse.vorto.core.api.model.model.Model;
 import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;

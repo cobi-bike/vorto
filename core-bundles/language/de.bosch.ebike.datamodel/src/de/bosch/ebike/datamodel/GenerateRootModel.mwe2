@@ -13,7 +13,7 @@
  * Bosch Software Innovations GmbH - Please refer to git log
  *
  *******************************************************************************/
-module de.bosch.ebike.datamodel.root.GenerateRootModel
+module de.bosch.ebike.datamodel.GenerateRootModel
 
 import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
@@ -28,7 +28,7 @@ Workflow {
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {
-				baseName = "de.bosch.ebike.datamodel.root"
+				baseName = "de.bosch.ebike.datamodel"
 				rootPath = rootPath
 				eclipsePlugin = {
 					enabled = false
@@ -67,7 +67,7 @@ Workflow {
 			}
 		}
 	language = StandardLanguage  {
-			name = "de.bosch.ebike.datamodel.root.RootModel"
+			name = "de.bosch.ebike.datamodel.RootModel"
 			fileExtensions = "ebike"
 
 			referencedResource = "platform:/resource/org.eclipse.vorto.core/model/InformationModel.genmodel"
