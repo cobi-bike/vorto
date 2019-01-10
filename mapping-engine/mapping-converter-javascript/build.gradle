@@ -1,0 +1,9 @@
+
+description = ''
+dependencies {
+  compile project(':mapping-engine:mapping-core')
+  testCompile project(':mapping-engine:mapping-core')
+  testCompile project(':mapping-engine:mapping-converter-string')
+  testCompile project(':mapping-engine:mapping-converter-types')
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+}

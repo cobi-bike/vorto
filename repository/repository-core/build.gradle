@@ -1,0 +1,70 @@
+
+description = ''
+dependencies {
+  compile project(':model')
+  compile project(':utilities:dsl-reader')
+    compile group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version:'3.7.0'
+  compile project(':core-bundles:meta-model:org.eclipse.vorto.core')
+  compile project(':core-bundles:language:org.eclipse.vorto.editor')
+  compile project(':core-bundles:language:org.eclipse.vorto.editor.datatype')
+  compile project(':core-bundles:language:org.eclipse.vorto.editor.functionblock')
+  compile project(':core-bundles:language:org.eclipse.vorto.editor.infomodel')
+  compile project(':core-bundles:language:org.eclipse.vorto.editor.mapping')
+  compile project(':mapping-engine:mapping-engine-all')
+  compile project(':mapping-engine:mapping-serializer')
+    compile(group: 'org.eclipse.xtext', name: 'org.eclipse.xtext', version:'2.9.0') {
+exclude(module: 'guava')
+exclude(module: 'log4j')
+    }
+    compile(group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase', version:'2.9.0') {
+exclude(module: 'asm')
+exclude(module: 'guava')
+    }
+    compile group: 'javax.interceptor', name: 'javax.interceptor-api', version:'1.2'
+    compile group: 'javax.jcr', name: 'jcr', version:'2.0'
+    compile(group: 'org.modeshape', name: 'modeshape-jcr', version:'4.3.0.Final') {
+exclude(module: 'netcdf')
+exclude(module: 'commons-httpclient')
+exclude(module: 'metadata-extractor')
+exclude(module: 'rome')
+exclude(module: 'boilerpipe')
+exclude(module: 'bcmail-jdk15')
+exclude(module: 'bcprov-jdk15')
+    }
+    compile group: 'org.modeshape', name: 'modeshape-jcr-api', version:'4.3.0.Final'
+    compile group: 'org.modeshape', name: 'modeshape-common', version:'4.3.0.Final'
+    compile group: 'com.sun.mail', name: 'javax.mail', version:'1.5.6'
+    compile group: 'org.freemarker', name: 'freemarker', version:'2.3.22'
+    compile group: 'com.google.code.gson', name: 'gson', version:'2.8.4'
+    compile(group: 'org.apache.httpcomponents', name: 'httpclient', version:'4.5.5') {
+exclude(module: 'commons-logging')
+    }
+    compile(group: 'org.springframework.boot', name: 'spring-boot-starter', version:'1.5.13.RELEASE') {
+exclude(module: 'commons-logging')
+    }
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'1.5.13.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version:'1.5.13.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version:'1.5.13.RELEASE'
+    compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version:'2.0.16.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version:'1.5.13.RELEASE'
+    compile group: 'io.swagger', name: 'swagger-annotations', version:'1.5.17'
+    compile group: 'io.swagger', name: 'swagger-models', version:'1.5.17'
+    compile(group: 'io.springfox', name: 'springfox-swagger2', version:'2.6.1') {
+exclude(module: 'swagger-annotations')
+exclude(module: 'swagger-models')
+    }
+    compile group: 'com.h2database', name: 'h2', version:'1.4.197'
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.5.13.RELEASE') {
+exclude(module: 'commons-logging')
+    }
+    testCompile group: 'org.springframework', name: 'spring-test', version:'4.3.17.RELEASE'
+    testCompile group: 'org.subethamail', name: 'subethasmtp', version:'3.1.7'
+    testCompile group: 'org.modeshape', name: 'modeshape-unit-test', version:'4.3.0.Final'
+    testCompile group: 'org.springframework.cloud', name: 'spring-cloud-starter-contract-stub-runner', version:'2.0.2.RELEASE'
+}
+
+task packageTests(type: Jar) {
+  from sourceSets.test.output
+  classifier = 'tests'
+}
+artifacts.archives packageTests

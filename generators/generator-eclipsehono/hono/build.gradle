@@ -1,0 +1,10 @@
+
+description = 'Eclipse Hono Generator - Main'
+dependencies {
+  compile project(':core-bundles:meta-model:org.eclipse.vorto.core')
+  compile project(':plugin-sdk:plugin-generator:generator-api')
+  compile project(':generators:generator-eclipsehono:hono-arduino')
+  compile project(':generators:generator-eclipsehono:hono-java')
+  compile project(':generators:generator-eclipsehono:hono-python')
+  compile project(':plugin-sdk:plugin-generator:generator-templates-java')
+}

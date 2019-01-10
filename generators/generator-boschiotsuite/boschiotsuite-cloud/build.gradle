@@ -1,0 +1,10 @@
+
+description = 'Bosch IoT Suite Cloud Generator'
+dependencies {
+  compile project(':core-bundles:meta-model:org.eclipse.vorto.core')
+  compile project(':plugin-sdk:plugin-generator:generator-api')
+  compile project(':generators:generator-eclipsehono:hono')
+  compile project(':generators:generator-boschiotsuite:boschiotsuite-gateway')
+  testCompile project(':plugin-sdk:plugin-generator:generator-api')
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+}

@@ -1,0 +1,6 @@
+
+description = 'Eclipse Vorto Model Runtime'
+dependencies {
+  compile project(':model')
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+}

@@ -1,0 +1,7 @@
+
+description = 'Bosch IoT Suite Gateway SW Generator'
+dependencies {
+  compile project(':core-bundles:meta-model:org.eclipse.vorto.core')
+  compile project(':plugin-sdk:plugin-generator:generator-api')
+  compile project(':plugin-sdk:plugin-generator:generator-templates-java')
+}

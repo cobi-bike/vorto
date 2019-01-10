@@ -1,0 +1,106 @@
+rootProject.name = 'parent'
+include ':core-bundles:org.eclipse.vorto.targetplatform'
+include ':core-bundles:language:org.eclipse.vorto.editor.datatype'
+include ':core-bundles:language:org.eclipse.vorto.editor.functionblock'
+include ':core-bundles:language:org.eclipse.vorto.editor.infomodel'
+include ':core-bundles:language:de.bosch.ebike.datamodel'
+include ':core-bundles:language:org.eclipse.vorto.editor.mapping'
+include ':core-bundles:language:org.eclipse.vorto.editor'
+include ':core-bundles:language'
+include ':core-bundles:meta-model:org.eclipse.vorto.core'
+include ':core-bundles:meta-model'
+include ':core-bundles'
+include ':model'
+include ':model-runtime'
+include ':device-adapter:device-adapter-api'
+include ':device-adapter'
+include ':plugin-sdk:plugin-generator:generator-api'
+include ':plugin-sdk:plugin-generator:generator-runner-spi'
+include ':plugin-sdk:plugin-generator:generator-templates-java'
+include ':plugin-sdk:plugin-generator:generator-template'
+include ':plugin-sdk:plugin-generator'
+include ':plugin-sdk'
+include ':generators:generator-boschiotsuite:boschiotsuite-cloud'
+include ':generators:generator-boschiotsuite:boschiotsuite-gateway'
+include ':generators:generator-boschiotsuite'
+include ':generators:generator-eclipsehono:hono'
+include ':generators:generator-eclipsehono:hono-java'
+include ':generators:generator-eclipsehono:hono-python'
+include ':generators:generator-eclipsehono:hono-arduino'
+include ':generators:generator-eclipsehono'
+include ':generators:generator-eclipseditto'
+include ':generators:generator-runner'
+include ':generators'
+include ':mapping-engine:mapping-core'
+include ':mapping-engine:mapping-converter-javascript'
+include ':mapping-engine:mapping-converter-string'
+include ':mapping-engine:mapping-converter-types'
+include ':mapping-engine:mapping-converter-date'
+include ':mapping-engine:mapping-converter-binary'
+include ':mapping-engine:mapping-serializer'
+include ':mapping-engine:mapping-engine-all'
+include ':mapping-engine'
+include ':repository:repository-api'
+include ':repository:repository-core'
+include ':repository:repository-importer:importer-ipso'
+include ':repository:repository-importer'
+include ':repository:repository-java-client'
+include ':repository:repository-server'
+include ':repository:repository-server-config'
+include ':repository:repository-web'
+include ':repository'
+include ':utilities:dsl-reader'
+include ':utilities'
+
+project(':core-bundles:org.eclipse.vorto.targetplatform').projectDir = "$rootDir/core-bundles/targetplatform" as File
+project(':core-bundles:language:org.eclipse.vorto.editor.datatype').projectDir = "$rootDir/core-bundles/language/org.eclipse.vorto.editor.datatype" as File
+project(':core-bundles:language:org.eclipse.vorto.editor.functionblock').projectDir = "$rootDir/core-bundles/language/org.eclipse.vorto.editor.functionblock" as File
+project(':core-bundles:language:org.eclipse.vorto.editor.infomodel').projectDir = "$rootDir/core-bundles/language/org.eclipse.vorto.editor.infomodel" as File
+project(':core-bundles:language:de.bosch.ebike.datamodel').projectDir = "$rootDir/core-bundles/language/de.bosch.ebike.datamodel" as File
+project(':core-bundles:language:org.eclipse.vorto.editor.mapping').projectDir = "$rootDir/core-bundles/language/org.eclipse.vorto.editor.mapping" as File
+project(':core-bundles:language:org.eclipse.vorto.editor').projectDir = "$rootDir/core-bundles/language/org.eclipse.vorto.editor" as File
+project(':core-bundles:language').projectDir = "$rootDir/core-bundles/language" as File
+project(':core-bundles:meta-model:org.eclipse.vorto.core').projectDir = "$rootDir/core-bundles/meta-model/org.eclipse.vorto.core" as File
+project(':core-bundles:meta-model').projectDir = "$rootDir/core-bundles/meta-model" as File
+project(':core-bundles').projectDir = "$rootDir/core-bundles" as File
+project(':model').projectDir = "$rootDir/model" as File
+project(':model-runtime').projectDir = "$rootDir/model-runtime" as File
+project(':device-adapter:device-adapter-api').projectDir = "$rootDir/device-adapter/device-adapter-api" as File
+project(':device-adapter').projectDir = "$rootDir/device-adapter" as File
+project(':plugin-sdk:plugin-generator:generator-api').projectDir = "$rootDir/plugin-sdk/plugin-generator/generator-api" as File
+project(':plugin-sdk:plugin-generator:generator-runner-spi').projectDir = "$rootDir/plugin-sdk/plugin-generator/generator-runner-spi" as File
+project(':plugin-sdk:plugin-generator:generator-templates-java').projectDir = "$rootDir/plugin-sdk/plugin-generator/generator-templates-java" as File
+project(':plugin-sdk:plugin-generator:generator-template').projectDir = "$rootDir/plugin-sdk/plugin-generator/generator-template" as File
+project(':plugin-sdk:plugin-generator').projectDir = "$rootDir/plugin-sdk/plugin-generator" as File
+project(':plugin-sdk').projectDir = "$rootDir/plugin-sdk" as File
+project(':generators:generator-boschiotsuite:boschiotsuite-cloud').projectDir = "$rootDir/generators/generator-boschiotsuite/boschiotsuite-cloud" as File
+project(':generators:generator-boschiotsuite:boschiotsuite-gateway').projectDir = "$rootDir/generators/generator-boschiotsuite/boschiotsuite-gateway" as File
+project(':generators:generator-boschiotsuite').projectDir = "$rootDir/generators/generator-boschiotsuite" as File
+project(':generators:generator-eclipsehono:hono').projectDir = "$rootDir/generators/generator-eclipsehono/hono" as File
+project(':generators:generator-eclipsehono:hono-java').projectDir = "$rootDir/generators/generator-eclipsehono/hono-java" as File
+project(':generators:generator-eclipsehono:hono-python').projectDir = "$rootDir/generators/generator-eclipsehono/hono-python" as File
+project(':generators:generator-eclipsehono:hono-arduino').projectDir = "$rootDir/generators/generator-eclipsehono/hono-arduino" as File
+project(':generators:generator-eclipsehono').projectDir = "$rootDir/generators/generator-eclipsehono" as File
+project(':generators:generator-eclipseditto').projectDir = "$rootDir/generators/generator-eclipseditto" as File
+project(':generators:generator-runner').projectDir = "$rootDir/generators/generator-runner" as File
+project(':generators').projectDir = "$rootDir/generators" as File
+project(':mapping-engine:mapping-core').projectDir = "$rootDir/mapping-engine/mapping-core" as File
+project(':mapping-engine:mapping-converter-javascript').projectDir = "$rootDir/mapping-engine/mapping-converter-javascript" as File
+project(':mapping-engine:mapping-converter-string').projectDir = "$rootDir/mapping-engine/mapping-converter-string" as File
+project(':mapping-engine:mapping-converter-types').projectDir = "$rootDir/mapping-engine/mapping-converter-types" as File
+project(':mapping-engine:mapping-converter-date').projectDir = "$rootDir/mapping-engine/mapping-converter-date" as File
+project(':mapping-engine:mapping-converter-binary').projectDir = "$rootDir/mapping-engine/mapping-converter-binary" as File
+project(':mapping-engine:mapping-serializer').projectDir = "$rootDir/mapping-engine/mapping-serializer" as File
+project(':mapping-engine:mapping-engine-all').projectDir = "$rootDir/mapping-engine/mapping-engine-all" as File
+project(':mapping-engine').projectDir = "$rootDir/mapping-engine" as File
+project(':repository:repository-api').projectDir = "$rootDir/repository/repository-api" as File
+project(':repository:repository-core').projectDir = "$rootDir/repository/repository-core" as File
+project(':repository:repository-importer:importer-ipso').projectDir = "$rootDir/repository/repository-importer/importer-ipso" as File
+project(':repository:repository-importer').projectDir = "$rootDir/repository/repository-importer" as File
+project(':repository:repository-java-client').projectDir = "$rootDir/repository/repository-java-client" as File
+project(':repository:repository-server').projectDir = "$rootDir/repository/repository-server" as File
+project(':repository:repository-server-config').projectDir = "$rootDir/repository/repository-server-config" as File
+project(':repository:repository-web').projectDir = "$rootDir/repository/repository-web" as File
+project(':repository').projectDir = "$rootDir/repository" as File
+project(':utilities:dsl-reader').projectDir = "$rootDir/utilities/dsl-reader" as File
+project(':utilities').projectDir = "$rootDir/utilities" as File

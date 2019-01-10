@@ -1,0 +1,9 @@
+
+description = 'eBike Root Datamodel'
+dependencies {
+    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xtext', version:'2.9.0'
+    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase', version:'2.9.0'
+  compile project(':core-bundles:language:org.eclipse.vorto.editor.datatype')
+  compile project(':core-bundles:language:org.eclipse.vorto.editor.functionblock')
+  compile project(':core-bundles:meta-model:org.eclipse.vorto.core')
+}

@@ -1,0 +1,27 @@
+
+description = 'Vorto Generator Runner'
+dependencies {
+    compile(group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'1.5.13.RELEASE') {
+exclude(module: 'log4j-over-slf4j')
+exclude(module: 'logback-classic')
+exclude(module: 'tomcat-embed-core')
+exclude(module: 'tomcat-embed-websocket')
+    }
+    compile(group: 'org.apache.httpcomponents', name: 'httpclient', version:'4.5.5') {
+exclude(module: 'commons-logging')
+    }
+    compile group: 'org.springframework', name: 'spring-webmvc', version:'4.3.20.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version:'4.3.20.RELEASE'
+    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version:'8.5.32'
+    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version:'8.5.34'
+  compile project(':plugin-sdk:plugin-generator:generator-runner-spi')
+  compile project(':generators:generator-boschiotsuite:boschiotsuite-cloud')
+  compile project(':generators:generator-boschiotsuite:boschiotsuite-gateway')
+  compile project(':generators:generator-eclipsehono:hono-arduino')
+  compile project(':generators:generator-eclipsehono:hono-python')
+  compile project(':generators:generator-eclipsehono:hono-java')
+  compile project(':generators:generator-eclipseditto')
+  compile project(':generators:generator-eclipsehono:hono')
+  compile project(':plugin-sdk:plugin-generator:generator-template')
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version:'1.1.11'
+}

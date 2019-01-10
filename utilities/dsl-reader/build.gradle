@@ -1,0 +1,18 @@
+group = 'org.eclipse.vorto.utilities'
+description = ''
+dependencies {
+  compile project(':core-bundles:meta-model:org.eclipse.vorto.core')
+  compile project(':repository:repository-api')
+  compile project(':core-bundles:language:org.eclipse.vorto.editor')
+  compile project(':core-bundles:language:org.eclipse.vorto.editor.datatype')
+  compile project(':core-bundles:language:org.eclipse.vorto.editor.functionblock')
+  compile project(':core-bundles:language:org.eclipse.vorto.editor.infomodel')
+  compile project(':core-bundles:language:org.eclipse.vorto.editor.mapping')
+    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext', version:'2.9.0'
+    compile group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version:'3.7.0'
+    compile group: 'commons-io', name: 'commons-io', version:'2.2'
+    compile(group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase', version:'2.9.0') {
+exclude(module: 'asm')
+    }
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+}

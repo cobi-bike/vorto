@@ -1,0 +1,9 @@
+
+description = ''
+dependencies {
+  compile project(':repository:repository-core')
+  compile project(':repository:repository-api')
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+  testCompile project(':repository:repository-core')
+    testCompile group: 'org.modeshape', name: 'modeshape-unit-test', version:'4.3.0.Final'
+}

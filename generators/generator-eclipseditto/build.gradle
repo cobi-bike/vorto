@@ -1,0 +1,7 @@
+
+description = 'Eclipse Ditto Generator'
+dependencies {
+  compile project(':core-bundles:meta-model:org.eclipse.vorto.core')
+  compile project(':plugin-sdk:plugin-generator:generator-api')
+    compile group: 'org.eclipse.xtend', name: 'org.eclipse.xtend.lib', version:'2.9.0'
+}

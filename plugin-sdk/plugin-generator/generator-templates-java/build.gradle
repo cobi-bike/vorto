@@ -1,0 +1,8 @@
+
+description = 'Vorto Code Generator Templates for Java'
+dependencies {
+  compile project(':core-bundles:meta-model:org.eclipse.vorto.core')
+  compile project(':plugin-sdk:plugin-generator:generator-api')
+    compile group: 'org.eclipse.xtend', name: 'org.eclipse.xtend.lib', version:'2.9.0'
+    compile group: 'commons-io', name: 'commons-io', version:'2.2'
+}

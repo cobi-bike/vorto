@@ -1,0 +1,6 @@
+
+description = ''
+dependencies {
+  compile project(':mapping-engine:mapping-core')
+    compile group: 'org.eclipse.xtend', name: 'org.eclipse.xtend.lib', version:'2.9.0'
+}

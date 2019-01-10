@@ -1,0 +1,6 @@
+
+description = 'Device Adapter API'
+dependencies {
+  compile project(':model')
+  compile project(':model-runtime')
+}
