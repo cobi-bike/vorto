@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Vorto Information Model Editor (Incubation)
+Bundle-Name: eBike Root Model Editor (Incubation)
 Bundle-Vendor: Eclipse.org/Vorto
 Bundle-Version: 0.10.0.qualifier
-Bundle-SymbolicName: de.bosch.ebike.datamodel.root;singleton:=true
+Bundle-SymbolicName: de.bosch.ebike.datamodel;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
