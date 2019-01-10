@@ -22,10 +22,10 @@ dependencies {
 task generateXtextLanguage(type: JavaExec) {
     main = 'org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher'
     classpath = configurations.mwe2
-    inputs.file "src/de/bosch/ebike/GenerateDataModel.mwe2"
-    inputs.file "src/de/bosch/ebike/DataModel.xtext"
+    inputs.file "${projectDir}/src/de/bosch/ebike/datamodel/GenerateRootModel.mwe2"
+    inputs.file "${projectDir}src/de/bosch/ebike/datamodel/RootModel.xtext"
     outputs.dir "src-gen"
-    args += "src/de/bosch/ebike/GenerateDataModel.mwe2"
+    args += "${projectDir}/src/de/bosch/ebike/GenerateRootModel.mwe2"
     args += "-p"
     args += "rootPath=/${projectDir}/.."
 }
