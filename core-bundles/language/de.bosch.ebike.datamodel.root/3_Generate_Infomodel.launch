@@ -16,5 +16,5 @@
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="src/de/bosch/ebike/datamodel/root/GenerateRootModel.mwe2"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="org.eclipse.vorto.editor.infomodel"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="de.bosch.ebike.datamodel.root.RootModel"/>
 </launchConfiguration>
