@@ -29,3 +29,5 @@ website/public
 *.ipr
 *.ids
 classes/
+/.gradle/
+build

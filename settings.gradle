@@ -4,6 +4,8 @@ include ':core-bundles:language:org.eclipse.vorto.editor.datatype'
 include ':core-bundles:language:org.eclipse.vorto.editor.functionblock'
 include ':core-bundles:language:org.eclipse.vorto.editor.infomodel'
 include ':core-bundles:language:de.bosch.ebike.datamodel'
+include ':core-bundles:language:de.bosch.ebike.datamodel.ide'
+include ':core-bundles:language:de.bosch.ebike.datamodel.idea'
 include ':core-bundles:language:org.eclipse.vorto.editor.mapping'
 include ':core-bundles:language:org.eclipse.vorto.editor'
 include ':core-bundles:language'
@@ -57,6 +59,8 @@ project(':core-bundles:language:org.eclipse.vorto.editor.datatype').projectDir =
 project(':core-bundles:language:org.eclipse.vorto.editor.functionblock').projectDir = "$rootDir/core-bundles/language/org.eclipse.vorto.editor.functionblock" as File
 project(':core-bundles:language:org.eclipse.vorto.editor.infomodel').projectDir = "$rootDir/core-bundles/language/org.eclipse.vorto.editor.infomodel" as File
 project(':core-bundles:language:de.bosch.ebike.datamodel').projectDir = "$rootDir/core-bundles/language/de.bosch.ebike.datamodel" as File
+project(':core-bundles:language:de.bosch.ebike.datamodel.ide').projectDir = "$rootDir/core-bundles/language/de.bosch.ebike.datamodel.ide" as File
+project(':core-bundles:language:de.bosch.ebike.datamodel.idea').projectDir = "$rootDir/core-bundles/language/de.bosch.ebike.datamodel.idea" as File
 project(':core-bundles:language:org.eclipse.vorto.editor.mapping').projectDir = "$rootDir/core-bundles/language/org.eclipse.vorto.editor.mapping" as File
 project(':core-bundles:language:org.eclipse.vorto.editor').projectDir = "$rootDir/core-bundles/language/org.eclipse.vorto.editor" as File
 project(':core-bundles:language').projectDir = "$rootDir/core-bundles/language" as File
