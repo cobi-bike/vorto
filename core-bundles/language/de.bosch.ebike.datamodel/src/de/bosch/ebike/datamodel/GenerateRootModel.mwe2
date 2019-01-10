@@ -39,6 +39,9 @@ Workflow {
 		        ideaPlugin = {
                     enabled = true
                 }
+                eclipsePlugin = {
+                    enabled = true
+                }
 		        web = {
 		        	enabled = false
 		        }

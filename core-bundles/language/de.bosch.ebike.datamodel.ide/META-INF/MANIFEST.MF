@@ -7,4 +7,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: de.bosch.ebike.datamodel.ide.contentassist.antlr,
  de.bosch.ebike.datamodel.ide.contentassist.antlr.internal
-
+Require-Bundle: org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
