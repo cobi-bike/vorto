@@ -45,4 +45,12 @@
             genModel="model/Mapping.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Root -->
+      <package
+            uri="https://www.bosch-ebike.com/datamodel/root"
+            class="org.eclipse.vorto.core.api.model.root.RootPackage"
+            genModel="model/Root.genmodel"/>
+   </extension>
+
 </plugin>
